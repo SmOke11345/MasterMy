@@ -1,0 +1,9 @@
+@import '../../../layout/scss/common';
+@import '../../../layout/scss/variables';
+
+.footer {
+    background-color: $auxiliary-black;
+    padding: 70px 0 30px;
+    @extend %wrapper;
+    justify-content: center;
+}

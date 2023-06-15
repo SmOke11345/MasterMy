@@ -1,0 +1,15 @@
+$title-text-color: rgba(0, 0, 0, 0.75);
+$white: #ffffff;
+$primary-color: #00aec5;
+$secondary-color: #bcbaba;
+$auxiliary-yellow: #ffe054;
+$auxiliary-grey: #d9d9d9;
+$auxiliary-black: #333333;
+
+$border-radius: 5px;
+
+%wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

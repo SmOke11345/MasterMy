@@ -1,0 +1,103 @@
+@import './../../../layout/scss/common';
+@import './../../../layout/scss/variables';
+
+.header {
+    padding: 20px 0;
+    box-shadow: 0 21px 30px rgba(0, 0, 0, 0.03)
+}
+
+.header_top {
+    @extend %wrapper;
+
+    .content_wrapper {
+        @extend %wrapper;
+        width: 466px;
+    }
+}
+
+.search_wrapper {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+
+    .search_inner {
+        position: absolute;
+        top: 0;
+        right: 50px;
+
+        input[name='search'] {
+            padding: 13px 0 13px 20px;
+            width: 390px;
+            border: 2px solid $auxiliary-grey;
+        }
+
+        input[name='search']::placeholder {
+            font-family: 'Days One', sans-serif;
+        }
+    }
+
+    .display_none {
+        display: none;
+    }
+
+    .search {
+        border-radius: 0 5px 5px 0;
+    }
+}
+
+.button_wrapper {
+    cursor: pointer;
+    border-radius: $border-radius;
+    background-color: $auxiliary-grey;
+    @extend %wrapper;
+    justify-content: center;
+    height: 45px;
+}
+
+.button_wrapper.small {
+    width: 50px;
+}
+
+//.content_wrapper .heart:hover svg path {
+//    fill: #ff0000;
+//}
+
+.button_wrapper.big {
+    width: 145px;
+}
+
+.button_wrapper.big h5 {
+    margin-left: 10px;
+    color: $white;
+}
+
+.header_bottom .content_wrapper {
+}
+
+.header_bottom {
+    @extend %wrapper;
+    padding-top: 25px;
+
+    .nav {
+        @extend %wrapper;
+        width: 376px;
+
+        a {
+            color: $title-text-color;
+            transition: 0.2s ease-in-out;
+        }
+    }
+
+    :global {
+        a.active {
+            color: $white;
+            background-color: $auxiliary-grey;
+            padding: 7px 11px;
+            box-shadow: 0 0 5px $auxiliary-grey;
+            border-radius: $border-radius;
+        }
+    }
+
+    .tel a {
+        color: $title-text-color;
+    }
+}

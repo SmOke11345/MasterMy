@@ -1,0 +1,88 @@
+.container {
+  width: 1140px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.header_bottom .nav, .header_bottom, .button_wrapper, .header_top .content_wrapper, .header_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  padding: 20px 0;
+  box-shadow: 0 21px 30px rgba(0, 0, 0, 0.03);
+}
+
+.header_top .content_wrapper {
+  width: 466px;
+}
+
+.search_wrapper {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.search_wrapper .search_inner {
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+.search_wrapper .search_inner input[name=search] {
+  padding: 13px 0 13px 20px;
+  width: 390px;
+  border: 2px solid #d9d9d9;
+}
+.search_wrapper .search_inner input[name=search]::placeholder {
+  font-family: "Days One", sans-serif;
+}
+.search_wrapper .display_none {
+  display: none;
+}
+.search_wrapper .search {
+  border-radius: 0 5px 5px 0;
+}
+
+.button_wrapper {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #d9d9d9;
+  justify-content: center;
+  height: 45px;
+}
+
+.button_wrapper.small {
+  width: 50px;
+}
+
+.button_wrapper.big {
+  width: 145px;
+}
+
+.button_wrapper.big h5 {
+  margin-left: 10px;
+  color: #ffffff;
+}
+
+.header_bottom {
+  padding-top: 25px;
+}
+.header_bottom .nav {
+  width: 376px;
+}
+.header_bottom .nav a {
+  color: rgba(0, 0, 0, 0.75);
+  transition: 0.2s ease-in-out;
+}
+.header_bottom :global a.active {
+  color: #ffffff;
+  background-color: #d9d9d9;
+  padding: 7px 11px;
+  box-shadow: 0 0 5px #d9d9d9;
+  border-radius: 5px;
+}
+.header_bottom .tel a {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/*# sourceMappingURL=styles.module.css.map */

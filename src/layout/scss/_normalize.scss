@@ -1,0 +1,42 @@
+@import './variables';
+
+// Fonts
+@import '../fonts/rounded_mplus_1c/mplusrounded1c';
+@import '../fonts/days_one/days';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: $white;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+}
+
+h1,
+h3,
+h4,
+h5 {
+    font-family: 'Days One', sans-serif;
+    font-weight: 400;
+}
+
+h2 {
+    font-family: 'M PLUS Rounded 1c Medium', sans-serif;
+    font-weight: 500;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 5px $auxiliary-grey;
+}
