@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { store } from './redux/store.ts';
 import { Provider } from 'react-redux';
+
 import App from './layout/App.tsx';
+import Contacts from './pages/Contact';
+import AboutUs from './pages/AboutUs';
+import Cart from './pages/Cart/Cart.tsx';
 
 const router = createBrowserRouter([
     {
@@ -12,15 +16,19 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/about',
-                element: <h1>About</h1>,
+                element: <AboutUs />,
             },
             {
                 path: '/contacts',
-                element: <h1>Contact</h1>,
+                element: <Contacts />,
             },
             {
                 path: '/catalog',
-                element: <h1>Login</h1>,
+                element: <div>hello</div>,
+            },
+            {
+                path: '/cart',
+                element: <Cart />,
             },
         ],
     },

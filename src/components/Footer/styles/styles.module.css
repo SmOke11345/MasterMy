@@ -1,10 +1,27 @@
+.footer .wrapper, .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .container {
   width: 1140px;
   max-width: 100%;
   margin: 0 auto;
 }
 
-.footer {
+.title {
+  margin-bottom: 50px;
+}
+.title h1 {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.shell {
+  margin: 100px 0;
+}
+
+.footer .wrapper, .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +31,44 @@
   background-color: #333333;
   padding: 70px 0 30px;
   justify-content: center;
+  color: #ffffff;
+}
+.footer .container {
+  width: 563px;
+}
+.footer .wrapper {
+  margin-top: 45px;
+}
+.footer .wrapper .list .title {
+  font-family: "Days One", sans-serif;
+  font-size: calc(16px + 2px);
+  margin-bottom: 25px;
+}
+.footer .wrapper .list li {
+  margin-bottom: 15px;
+}
+.footer .wrapper .list li:last-child {
+  margin-bottom: 0;
+}
+.footer .wrapper .separator {
+  width: 25px;
+  height: 1px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+.footer .wrapper .social {
+  display: flex;
+  margin-top: 27px;
+}
+.footer .wrapper .social__item {
+  margin-right: 20px;
+}
+.footer .content_wrapper.copyright {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #ffffff;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.module.css.map */

@@ -6,4 +6,53 @@
     padding: 70px 0 30px;
     @extend %wrapper;
     justify-content: center;
+    color: $white;
+
+    .container {
+        width: 563px;
+    }
+
+    .wrapper {
+        @extend %wrapper;
+        margin-top: 45px;
+
+        .list .title {
+            font-family: 'Days One', sans-serif;
+            font-size: calc(#{$font-p} + 2px);
+            margin-bottom: 25px;
+        }
+
+        .list li {
+            margin-bottom: 15px;
+        }
+
+        .list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .separator {
+            width: 25px;
+            height: 1px;
+            background-color: $white;
+            border-radius: 5px;
+            margin: 10px auto;
+        }
+
+        .social {
+            display: flex;
+            margin-top: 27px;
+
+            &__item {
+                margin-right: 20px;
+            }
+        }
+
+
+    }
+    .content_wrapper.copyright {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid $white;
+        text-align: center;
+    }
 }

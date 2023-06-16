@@ -1,0 +1,12 @@
+@import './normalize.scss';
+@import './variables.scss';
+
+.layout_shell {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    //display: grid;
+    //grid-template-rows:  145px 1fr 451px;
+    //row-gap: 100px ;
+}
