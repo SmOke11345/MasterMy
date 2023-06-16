@@ -1,0 +1,68 @@
+.container {
+  width: 1140px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 50px;
+}
+.title h1 {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.shell {
+  margin: 100px 0;
+}
+
+.contacts {
+  color: #ffffff;
+}
+.contacts .wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 35px;
+}
+.contacts .wrapper .grid_bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+}
+.contacts .grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 35px;
+}
+.contacts .grid__item.grid_first {
+  background: linear-gradient(102.74deg, #bcbaba 52.56%, #5fb4bf 52.56%, #00aec5 97.08%);
+}
+.contacts .grid__item {
+  background-color: #00aec5;
+  border-radius: 5px;
+}
+.contacts .grid__inner {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  height: 278px;
+}
+.contacts .grid__inner.link_bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contacts .grid__subtitle {
+  margin-top: 20px;
+}
+.contacts .grid__btn {
+  margin-top: 55px;
+  width: 174px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  text-align: center;
+}
+.contacts .grid__btn a {
+  padding: 15px;
+  display: block;
+}
+
+/*# sourceMappingURL=styles.module.css.map */

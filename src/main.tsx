@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import App from './layout/App.tsx';
 import Contacts from './pages/Contact';
 import AboutUs from './pages/AboutUs';
-import Cart from './pages/Cart/Cart.tsx';
+import Cart from './pages/Cart';
 
 const router = createBrowserRouter([
     {
