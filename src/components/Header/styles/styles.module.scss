@@ -36,27 +36,12 @@
         }
     }
 
-    .display_none {
-        display: none;
-    }
-
     .search {
         border-radius: 0 5px 5px 0;
     }
 }
 
-.button_wrapper {
-    cursor: pointer;
-    border-radius: $border-radius;
-    background-color: $auxiliary-grey;
-    @extend %wrapper;
-    justify-content: center;
-    height: 45px;
-}
 
-.button_wrapper.small {
-    width: 50px;
-}
 
 //.content_wrapper .heart:hover svg path {
 //    fill: #ff0000;
@@ -83,15 +68,17 @@
         @extend %wrapper;
         width: 376px;
 
+
         a {
-            color: $title-text-color;
             transition: 0.2s ease-in-out;
+            color: $title-text-color;
             padding: 7px 11px;
         }
     }
 
     :global {
-        a.active {
+        a.active,
+        a:hover {
             color: $white;
             background-color: $auxiliary-grey;
             padding: 7px 11px;

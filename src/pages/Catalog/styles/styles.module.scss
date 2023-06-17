@@ -1,0 +1,11 @@
+@import '../../../layout/scss/common';
+@import '../../../layout/scss/variables';
+
+.Catalog {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 45px;
+        row-gap: 90px;
+    }
+}

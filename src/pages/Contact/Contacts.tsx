@@ -7,7 +7,7 @@ const Contacts: React.FC = () => {
         <section className={`${styles.contacts} ${styles.shell}`}>
             <div className={styles.container}>
                 <div className={styles.title}>
-                    <h1>Контакты</h1>
+                    <h2>Контакты</h2>
                 </div>
                 <div className={styles.wrapper}>
                     <div className={`${styles.grid_top} ${styles.grid}`}>
@@ -15,7 +15,7 @@ const Contacts: React.FC = () => {
                             <div className={styles.grid__inner}>
                                 <div>
                                     <div className={styles.grid__title}>
-                                        <h2>Обращения</h2>
+                                        <h3>Обращения</h3>
                                     </div>
                                     <div className={styles.grid__subtitle}>
                                         <p>Если у Вас возник вопрос - напишите нам</p>
@@ -65,14 +65,14 @@ const Contacts: React.FC = () => {
                                 <div className={`${styles.grid__inner} ${styles.link_bottom}`}>
                                     <div>
                                         <div className={styles.grid__title}>
-                                            <h2>Официальные запросы</h2>
+                                            <h3>Официальные запросы</h3>
                                         </div>
                                         <div className={styles.grid__subtitle}>
                                             <p>Для отправки или получения деловой документации</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <h3>sales@mastermy.ru</h3>
+                                        <h4>sales@mastermy.ru</h4>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@ const Contacts: React.FC = () => {
                                 <div className={styles.grid__inner}>
                                     <div>
                                         <div className={styles.grid__title}>
-                                            <h2>Правообладателям</h2>
+                                            <h3>Правообладателям</h3>
                                         </div>
                                         <div className={styles.grid__subtitle}>
                                             <p>
@@ -101,14 +101,14 @@ const Contacts: React.FC = () => {
                                 <div className={`${styles.grid__inner} ${styles.link_bottom}`}>
                                     <div>
                                         <div className={styles.grid__title}>
-                                            <h2>Партнерам</h2>
+                                            <h3>Партнерам</h3>
                                         </div>
                                         <div className={styles.grid__subtitle}>
                                             <p>Узнайте подробные условия для сотрудничества</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <h3>Подробнее</h3>
+                                        <h4>Подробнее</h4>
                                     </div>
                                 </div>
                             </div>
@@ -118,14 +118,14 @@ const Contacts: React.FC = () => {
                                 <div className={`${styles.grid__inner} ${styles.link_bottom}`}>
                                     <div>
                                         <div className={styles.grid__title}>
-                                            <h2>Пресс-служба</h2>
+                                            <h3>Пресс-служба</h3>
                                         </div>
                                         <div className={styles.grid__subtitle}>
                                             <p>Для запросов СМИ и на участие в мероприятиях</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <h3>pr@mastermy.ru</h3>
+                                        <h4>pr@mastermy.ru</h4>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@ const Contacts: React.FC = () => {
                             <div className={styles.grid__inner}>
                                 <div>
                                     <div className={styles.grid__title}>
-                                        <h2>Юридический адрес</h2>
+                                        <h3>Юридический адрес</h3>
                                     </div>
                                     <div className={styles.grid__subtitle}>
                                         <p>

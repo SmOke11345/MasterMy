@@ -1,0 +1,66 @@
+@import '../../../layout/scss/common';
+@import '../../../layout/scss/variables';
+
+.card {
+    width: 350px;
+    border: 1px solid $auxiliary-grey;
+    border-radius: $border-radius;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+
+    &__img {
+        height: 350px;
+    }
+
+    &__inner {
+        padding: 30px 20px;
+
+        .wrapper {
+            @extend %wrapper;
+        }
+    }
+
+    &__title h2 {
+        font-size: calc(#{$font-h} - 10px);
+    }
+
+    &__price h2 {
+        font-size: calc(#{$font-h} - 8px);
+    }
+
+    &__bottom {
+        width: 350px;
+        position: absolute;
+        bottom: -76px;
+        left: -1px;
+        right: 0;
+
+        background-color: #ffffff;
+        border: 1px solid #ffe054;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+
+        .wrapper {
+            @extend %wrapper;
+            padding: 0 20px 30px;
+        }
+    }
+
+    &:hover {
+        border: 1px solid $auxiliary-yellow;
+        border-bottom: none;
+        border-radius: 5px 5px 0 0;
+    }
+}
+
+.button_wrapper {
+    background-color: $auxiliary-yellow;
+}
+
+.heart:hover svg path {
+    fill: #ff0000;
+}
+
+.display_none {
+    display: none;
+}

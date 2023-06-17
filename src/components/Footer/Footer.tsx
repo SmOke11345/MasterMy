@@ -31,19 +31,35 @@ const Footer: React.FC = () => {
                     <div className={styles.content_wrapper}>
                         <ul className={styles.list}>
                             <li className={styles.title}>Компания</li>
-                            <li>Главная</li>
-                            <li>О нас</li>
-                            <li>Новости и акции</li>
-                            <li>Контакты</li>
+                            <li>
+                                <a href="#">Главная</a>
+                            </li>
+                            <li>
+                                <a href="#">О нас</a>
+                            </li>
+                            <li>
+                                <a href="#">Новостии акции</a>
+                            </li>
+                            <li>
+                                <a href="#">Контакты</a>
+                            </li>
                         </ul>
                     </div>
                     <div className={styles.content_wrapper}>
                         <ul className={styles.list}>
                             <li className={styles.title}>Сервис</li>
-                            <li>Как заказать</li>
-                            <li>Доставка</li>
-                            <li>Возврат товара</li>
-                            <li>Оплата</li>
+                            <li>
+                                <a href="#">Как заказать</a>
+                            </li>
+                            <li>
+                                <a href="#">Доставка</a>
+                            </li>
+                            <li>
+                                <a href="#">Возврат товара</a>
+                            </li>
+                            <li>
+                                <a href="#">Оплата</a>
+                            </li>
                         </ul>
                     </div>
                     <div className={styles.content_wrapper}>

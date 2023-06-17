@@ -8,10 +8,12 @@ import styles from './scss/all.module.css';
 function App() {
     return (
         <div className={styles.layout_shell}>
-            <Header />
-            <main>
-                <Outlet />
-            </main>
+            <div>
+                <Header />
+                <main>
+                    <Outlet />
+                </main>
+            </div>
             <Footer />
         </div>
     );

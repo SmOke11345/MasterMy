@@ -7,7 +7,7 @@ const Cart: React.FC = () => {
         <section className={`${styles.Cart} ${styles.shell}`}>
             <div className={styles.container}>
                 <div className={styles.title}>
-                    <h1>Корзина</h1>
+                    <h2>Корзина</h2>
                 </div>
             </div>
         </section>

@@ -1,0 +1,121 @@
+.card__bottom .wrapper, .card__inner .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  width: 1140px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+section:not(:first-child) .title {
+  margin-top: 100px;
+}
+
+.title {
+  margin-bottom: 50px;
+}
+.title h2 {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.shell {
+  margin: 100px 0;
+}
+
+.btn {
+  width: 185px;
+  height: 45px;
+  text-align: center;
+  background-color: #ffe054;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+}
+.btn:hover {
+  filter: drop-shadow(0px 0px 10px rgba(255, 224, 84, 0.9));
+}
+.btn a {
+  font-family: "Days One", sans-serif;
+  font-size: calc(32px / 2);
+  padding: 13px 0;
+  display: block;
+}
+
+.display_none {
+  display: none;
+}
+
+.button_wrapper {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+}
+
+.button_wrapper.small {
+  width: 50px;
+}
+
+.card__bottom .wrapper, .card__inner .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+.card__img {
+  height: 350px;
+}
+.card__inner {
+  padding: 30px 20px;
+}
+.card__title h2 {
+  font-size: calc(32px - 10px);
+}
+.card__price h2 {
+  font-size: calc(32px - 8px);
+}
+.card__bottom {
+  width: 350px;
+  position: absolute;
+  bottom: -76px;
+  left: -1px;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #ffe054;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+}
+.card__bottom .wrapper {
+  padding: 0 20px 30px;
+}
+.card:hover {
+  border: 1px solid #ffe054;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+}
+
+.button_wrapper {
+  background-color: #ffe054;
+}
+
+.heart:hover svg path {
+  fill: #ff0000;
+}
+
+.display_none {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.module.css.map */

@@ -1,0 +1,95 @@
+@import '../../../layout/scss/common';
+@import '../../../layout/scss/variables';
+
+.Main {
+    .wrapper {
+        @extend %wrapper;
+    }
+
+    .categories {
+        display: grid;
+        row-gap: 35px;
+
+        &__item {
+            display: flex;
+            align-items: center;
+            width: 268px;
+            cursor: pointer;
+        }
+
+        &__img {
+            padding: 5px;
+            border-radius: $border-radius;
+            border: 1px solid $auxiliary-grey;
+            background-color: #f5f5f5;
+        }
+
+        &__name {
+            text-align: center;
+            width: 203px;
+            padding: 14px 0;
+            border-radius: 0 5px 5px 0;
+            border: 1px solid $auxiliary-grey;
+            border-left: none;
+            transition: all 0.2s ease-in-out;
+
+            h5 {
+                font-size: calc(#{$font-h} / 2);
+            }
+
+            &:hover {
+                color: $white;
+                background-color: rgba(0, 174, 197, 0.6);
+            }
+        }
+    }
+
+    .banner {
+        &__inner {
+            border: 1px solid $auxiliary-grey;
+            border-radius: $border-radius;
+        }
+
+        &__img {
+            height: 486px;
+        }
+
+        .banner_bottom {
+            @extend %wrapper;
+            padding: 30px;
+            border-top: 1px solid $auxiliary-grey;
+        }
+    }
+
+    .small_width {
+        width: 457px;
+    }
+
+    .grid_wrapper {
+        .grid {
+            display: grid;
+            grid-template-columns: 1.35fr 1fr 1fr 1fr;
+            column-gap: 35px;
+
+            &__item {
+                background-color: $auxiliary-grey;
+                border-radius: $border-radius;
+                height: 336px;
+            }
+        }
+
+        .grid_reverse {
+            grid-template-columns: 1fr 1fr 1fr 1.35fr;
+        }
+
+        .link {
+            margin-top: 25px;
+            background: url('../img/arrow-right.svg') no-repeat right center;
+            width: 140px;
+
+            a {
+                color: $title-text-color;
+            }
+        }
+    }
+}

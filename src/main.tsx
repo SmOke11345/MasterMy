@@ -8,12 +8,19 @@ import App from './layout/App.tsx';
 import Contacts from './pages/Contact';
 import AboutUs from './pages/AboutUs';
 import Cart from './pages/Cart';
+import Main from './pages/Main';
+import Catalog from './pages/Catalog';
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
         children: [
+            {
+                path: '/',
+                element: <Main />,
+                index: true,
+            },
             {
                 path: '/about',
                 element: <AboutUs />,
@@ -24,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/catalog',
-                element: <div>hello</div>,
+                element: <Catalog />,
             },
             {
                 path: '/cart',

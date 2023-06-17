@@ -1,2 +1,95 @@
 @import '../../../layout/scss/common';
 @import '../../../layout/scss/variables';
+
+.AboutUs {
+    .hero {
+        background-color: $primary-color;
+        border-radius: $border-radius;
+        border: revert 20px solid $primary-color;
+        padding: 80px;
+        display: flex;
+        justify-content: space-between;
+        color: $white;
+
+        &__title {
+            width: 80%;
+
+            h1 {
+                font-size: calc(#{$font-h} + 23px);
+            }
+        }
+
+        &__subtitle {
+            width: 65%;
+            margin-top: 15px;
+
+            h3 {
+                font-size: calc(#{$font-h} - 8px);
+            }
+        }
+    }
+
+    .subject {
+        @extend %wrapper;
+        justify-content: space-evenly;
+        color: $white;
+        margin-top: 70px;
+
+        &__item {
+            background-color: $secondary-color;
+            border-radius: $border-radius;
+            display: flex;
+            align-items: center;
+            width: 325px;
+            height: 120px;
+            padding: 20px 25px;
+        }
+
+        &__img {
+            margin-right: 40px;
+        }
+    }
+
+
+
+    .card {
+        @extend %wrapper;
+        text-align: center;
+
+        &__item {
+            width: 275px;
+            height: 385px;
+        }
+
+        &__title_inner {
+            margin-bottom: 35px;
+        }
+
+        &__title {
+            margin-top: 20px;
+
+            h4 {
+                font-size: calc(#{$font-h} - 6px);
+            }
+        }
+
+        &__inner {
+            padding: 30px 65px;
+            border: 1px solid $primary-color;
+            border-radius: $border-radius;
+        }
+    }
+
+    .countries {
+        @extend %wrapper;
+        text-align: center;
+
+        &__img {
+            margin-bottom: 15px;
+        }
+
+        &__title h4 {
+            font-size: calc(#{$font-h} - 6px);
+        }
+    }
+}

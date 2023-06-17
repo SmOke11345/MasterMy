@@ -1,13 +1,16 @@
 @font-face {
-    font-family: 'M PLUS Rounded 1c';
-    src:  url('./Roundedmplus1c.woff2') format('woff2'), url('./Roundedmplus1c.woff') format('woff'), url('./Roundedmplus1c.ttf') format('ttf');
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    src: url('./Roundedmplus1c.woff2') format('woff2'), url('./Roundedmplus1c.woff') format('woff'),
+        url('./Roundedmplus1c.ttf') format('ttf');
     font-weight: 400;
     font-style: normal;
 }
+
 @font-face {
-    font-family: 'M PLUS Rounded 1c Medium';
-    src:  url('./Roundedmplus1cmedium.woff2') format('woff2'), url('./Roundedmplus1cmedium.woff') format('woff'), url('./Roundedmplus1cmedium.ttf') format('ttf');
+    font-family: 'M PLUS Rounded 1c Medium', sans-serif;
+    src: url('./Roundedmplus1cmedium.woff2') format('woff2'),
+        url('./Roundedmplus1cmedium.woff') format('woff'),
+        url('./Roundedmplus1cmedium.ttf') format('ttf');
     font-weight: 500;
     font-style: normal;
 }
-
