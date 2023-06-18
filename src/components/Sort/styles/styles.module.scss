@@ -1,0 +1,36 @@
+@import '../../../layout/scss/variables';
+
+.sort {
+    border-radius: $border-radius;
+    background-color: $secondary-color;
+    width: 230px;
+    cursor: pointer;
+
+    &__inner {
+        @extend %wrapper;
+        padding: 5px 20px 5px 15px;
+    }
+
+    &__title h4 {
+        color: $white;
+        font-size: calc(#{$font-h} / 2);
+    }
+
+    &__list {
+        width: 230px;
+        background-color: $white;
+        position: absolute;
+        z-index: 200;
+        padding: 14px;
+        border-radius: 0 0 5px 5px;
+        border: 1px solid $auxiliary-grey;
+
+        ul li:not(li:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.sort.open {
+    border-radius: 5px 5px 0 0;
+}

@@ -130,6 +130,7 @@ section:not(:first-child) .title {
   margin-top: 25px;
   background: url("../img/arrow-right.svg") no-repeat right center;
   width: 140px;
+  cursor: pointer;
 }
 .Main .grid_wrapper .link a {
   color: rgba(0, 0, 0, 0.75);

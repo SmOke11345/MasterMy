@@ -8,4 +8,11 @@
         column-gap: 45px;
         row-gap: 90px;
     }
+
+    .wrapper_filters {
+        @extend %wrapper;
+
+        align-items: flex-start;
+        margin-bottom: 50px;
+    }
 }

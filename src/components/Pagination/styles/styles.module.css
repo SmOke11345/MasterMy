@@ -1,0 +1,57 @@
+.paginate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@font-face {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  src: url("./Roundedmplus1c.woff2") format("woff2"), url("./Roundedmplus1c.woff") format("woff"), url("./Roundedmplus1c.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "M PLUS Rounded 1c Medium", sans-serif;
+  src: url("./Roundedmplus1cmedium.woff2") format("woff2"), url("./Roundedmplus1cmedium.woff") format("woff"), url("./Roundedmplus1cmedium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+.paginate {
+  width: 215px;
+  margin-top: 60px;
+  cursor: pointer;
+}
+.paginate :global li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: #bcbaba;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+.paginate :global li a {
+  font-family: "M PLUS Rounded 1c Medium", sans-serif;
+  font-size: 20px;
+}
+.paginate :global li:not(.previous):not(.next):hover, .paginate :global li:not(.previous):not(.next).selected {
+  transform: scale(1.1);
+}
+.paginate :global li:not(.previous):not(.next):hover a, .paginate :global li:not(.previous):not(.next).selected a {
+  color: #000000;
+}
+.paginate :global .previous,
+.paginate :global .next {
+  background-color: #ffffff;
+}
+.paginate :global .previous a,
+.paginate :global .next a {
+  height: 35px;
+}
+.paginate :global .previous a:hover svg path,
+.paginate :global .next a:hover svg path {
+  stroke: #00aec5;
+}
+
+/*# sourceMappingURL=styles.module.css.map */

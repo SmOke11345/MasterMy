@@ -1,0 +1,37 @@
+.sort__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sort {
+  border-radius: 5px;
+  background-color: #bcbaba;
+  width: 230px;
+  cursor: pointer;
+}
+.sort__inner {
+  padding: 5px 20px 5px 15px;
+}
+.sort__title h4 {
+  color: #ffffff;
+  font-size: calc(32px / 2);
+}
+.sort__list {
+  width: 230px;
+  background-color: #ffffff;
+  position: absolute;
+  z-index: 200;
+  padding: 14px;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #d9d9d9;
+}
+.sort__list ul li:not(li:last-child) {
+  margin-bottom: 15px;
+}
+
+.sort.open {
+  border-radius: 5px 5px 0 0;
+}
+
+/*# sourceMappingURL=styles.module.css.map */

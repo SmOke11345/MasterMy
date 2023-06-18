@@ -1,0 +1,49 @@
+@import '../../../layout/scss/variables';
+@import '../../../layout/fonts/rounded_mplus_1c/mplusrounded1c';
+
+.paginate {
+    @extend %wrapper;
+    width: 215px;
+    margin-top: 60px;
+    cursor: pointer;
+
+    :global {
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: $secondary-color;
+            border-radius: 50%;
+            transition: all 0.2s ease-in-out;
+
+            a {
+                font-family: 'M PLUS Rounded 1c Medium', sans-serif;
+                font-size: 20px;
+            }
+
+            &:not(.previous):not(.next):hover,
+            &:not(.previous):not(.next).selected {
+                transform: scale(1.1);
+
+                a {
+                    color: #000000;
+                }
+            }
+        }
+
+        .previous,
+        .next {
+            background-color: $white;
+
+            a {
+                height: 35px;
+
+                &:hover svg path {
+                    stroke: $primary-color;
+                }
+            }
+        }
+    }
+}

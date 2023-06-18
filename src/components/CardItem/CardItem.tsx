@@ -3,23 +3,29 @@ import { useHover } from 'usehooks-ts';
 
 import styles from './styles/styles.module.css';
 
-const CardItem: React.FC = () => {
+type CardItemProps = {
+    title: string;
+    price: number;
+    img: string;
+};
+
+const CardItem: React.FC<CardItemProps> = ({ title, price, img }) => {
     const ref = React.useRef<HTMLDivElement>(null);
     const isHover = useHover(ref);
 
     return (
         <div ref={ref} className={styles.card}>
             <div className={styles.card__top}>
-                <div className={styles.card__img}>
-                    <img src="" alt="" />
-                </div>
+                <div
+                    className={styles.card__img}
+                    style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}></div>
                 <div className={styles.card__inner}>
                     <div className={styles.wrapper}>
                         <div className={styles.card__title}>
-                            <h2>Название</h2>
+                            <h2>{title}</h2>
                         </div>
                         <div className={styles.card__price}>
-                            <h2>2000 ₽</h2>
+                            <h2>{price}₽</h2>
                         </div>
                     </div>
                     <div className={`${styles.card__bottom} ${isHover ? '' : styles.display_none}`}>

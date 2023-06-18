@@ -1,59 +1,19 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+import { arrCategories } from '../../components/Categories/category.tsx';
 
 import sale from './img/sale.png';
 
-// Categories
-import cloth from './img/cloth.svg';
-import electronics from './img/electronics.svg';
-import appliances from './img/appliances.svg';
-import autoParts from './img/auto-parts.svg';
-import books from './img/books.svg';
-import fruits from './img/fruits.svg';
-import all from './img/all.svg';
-
 import styles from './styles/styles.module.css';
-
-const arrCategories: Record<string, string>[] = [
-    {
-        name: 'Одежда',
-        img: cloth,
-        link: '/catalog',
-    },
-    {
-        name: 'Электроника',
-        img: electronics,
-        link: '/catalog',
-    },
-    {
-        name: 'Бытовая техника',
-        img: appliances,
-        link: '/catalog',
-    },
-    {
-        name: 'Автозапчасти',
-        img: autoParts,
-        link: '/catalog',
-    },
-    {
-        name: 'Книги',
-        img: books,
-        link: '/catalog',
-    },
-    {
-        name: 'Фрукты',
-        img: fruits,
-        link: '/catalog',
-    },
-    {
-        name: 'Все',
-        img: all,
-        link: '/catalog',
-    },
-];
 
 const Main: React.FC = () => {
     const navigate = useNavigate();
+
+    const navigateTo = (link: string): void => {
+        navigate(link);
+        window.scrollTo(0, 0);
+    };
 
     return (
         <div className={`${styles.Main} ${styles.shell}`}>
@@ -118,7 +78,7 @@ const Main: React.FC = () => {
                             <div className={styles.grid__item}></div>
                         </div>
                         <div className={styles.link}>
-                            <Link to="/catalog">Посмотреть все</Link>
+                            <a onClick={() => navigateTo('/catalog')}>Посмотреть все</a>
                         </div>
                     </div>
                     <div className={styles.title}>
@@ -132,7 +92,7 @@ const Main: React.FC = () => {
                             <div className={styles.grid__item}></div>
                         </div>
                         <div className={styles.link}>
-                            <Link to="/catalog">Посмотреть все</Link>
+                            <a onClick={() => navigateTo('/catalog')}>Посмотреть все</a>
                         </div>
                     </div>
                 </section>

@@ -1,0 +1,29 @@
+.categories {
+  display: flex;
+  width: 70%;
+  overflow: scroll hidden;
+  padding-bottom: 15px;
+}
+.categories__item {
+  height: 35px;
+  background-color: #bcbaba;
+  border-radius: 5px;
+  color: #ffffff;
+  white-space: nowrap;
+  margin-right: 20px;
+  padding: 5px 30px;
+  cursor: pointer;
+}
+.categories__item h4 {
+  font-size: calc(32px / 2);
+}
+.categories__item:hover {
+  color: #000000;
+  box-shadow: 0 0 5px rgba(0, 174, 197, 0.6);
+}
+.categories__item.active {
+  color: #000000;
+  box-shadow: 0 0 5px rgba(0, 174, 197, 0.6);
+}
+
+/*# sourceMappingURL=styles.module.css.map */

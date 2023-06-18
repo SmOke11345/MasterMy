@@ -1,0 +1,33 @@
+@import '../../../layout/scss/variables';
+
+.categories {
+    display: flex;
+    width: 70%;
+    overflow: scroll hidden;
+    padding-bottom: 15px;
+
+    &__item {
+        height: 35px;
+        background-color: $secondary-color;
+        border-radius: $border-radius;
+        color: $white;
+        white-space: nowrap;
+        margin-right: 20px;
+        padding: 5px 30px;
+        cursor: pointer;
+
+        h4 {
+            font-size: calc(#{$font-h} / 2);
+        }
+
+        &:hover {
+            color: #000000;
+            box-shadow: 0 0 5px rgba(0, 174, 197, 0.6);
+        }
+    }
+
+    &__item.active {
+        color: #000000;
+        box-shadow: 0 0 5px rgba(0, 174, 197, 0.6);
+    }
+}
