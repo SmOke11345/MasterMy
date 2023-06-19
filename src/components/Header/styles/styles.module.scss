@@ -1,5 +1,6 @@
 @import './../../../layout/scss/common';
 @import './../../../layout/scss/variables';
+@import './../../../layout/fonts/days_one/days';
 
 .header {
     padding: 20px 0;
@@ -25,13 +26,10 @@
         right: 50px;
 
         input[name='search'] {
-            padding: 13px 0 13px 20px;
+            padding: 12px 0 12px 20px;
             width: 390px;
             border: 2px solid $auxiliary-grey;
             border-radius: 5px 0 0 5px;
-        }
-
-        input[name='search']::placeholder {
             font-family: 'Days One', sans-serif;
         }
     }
@@ -41,14 +39,13 @@
     }
 }
 
-
-
 //.content_wrapper .heart:hover svg path {
 //    fill: #ff0000;
 //}
 
 .button_wrapper.big {
     width: 145px;
+    position: relative;
 }
 
 .button_wrapper.big h5 {
@@ -56,6 +53,24 @@
     color: $white;
     font-size: calc(#{$font-h} - 18px);
 }
+
+.active {
+    @extend %wrapper;
+    justify-content: center;
+    position: absolute;
+    width: 32px;
+    height: 30px;
+    background-color: $auxiliary-yellow;
+    border-radius: 50%;
+    top: -15px;
+    right: -15px;
+
+    p {
+        font-family: 'Days One', sans-serif;
+        font-size: calc(#{$font-p} - 2px);
+    }
+}
+
 
 //.header_bottom .content_wrapper {
 //}
@@ -67,7 +82,6 @@
     .nav {
         @extend %wrapper;
         width: 376px;
-
 
         a {
             transition: 0.2s ease-in-out;

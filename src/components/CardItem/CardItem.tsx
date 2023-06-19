@@ -1,24 +1,40 @@
 import React from 'react';
+
 import { useHover } from 'usehooks-ts';
+import { useAppDispatch } from '../../redux/hooks.ts';
+import { addToCart } from '../../redux/cart/slice.ts';
+import { Items } from '../../redux/cart/types.ts';
 
 import styles from './styles/styles.module.css';
 
-type CardItemProps = {
-    title: string;
-    price: number;
-    img: string;
-};
-
-const CardItem: React.FC<CardItemProps> = ({ title, price, img }) => {
+const CardItem: React.FC<Items> = ({ id, category_name, subtitle, title, price, img }) => {
     const ref = React.useRef<HTMLDivElement>(null);
     const isHover = useHover(ref);
+
+    const dispatch = useAppDispatch();
+
+    const addToCartItem = () => {
+        const objItem: Items = {
+            id,
+            category_name,
+            img,
+            title,
+            subtitle,
+            price,
+            count: 1,
+        };
+        dispatch(addToCart(objItem));
+    };
 
     return (
         <div ref={ref} className={styles.card}>
             <div className={styles.card__top}>
                 <div
                     className={styles.card__img}
-                    style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}></div>
+                    style={{
+                        background: `url(${img})`,
+                        backgroundSize: 'cover',
+                    }}></div>
                 <div className={styles.card__inner}>
                     <div className={styles.wrapper}>
                         <div className={styles.card__title}>
@@ -31,7 +47,7 @@ const CardItem: React.FC<CardItemProps> = ({ title, price, img }) => {
                     <div className={`${styles.card__bottom} ${isHover ? '' : styles.display_none}`}>
                         <div className={styles.wrapper}>
                             <div className={styles.btn}>
-                                <a href="#">В корзину</a>
+                                <a onClick={addToCartItem}>В корзину</a>
                             </div>
                             <div
                                 className={`${styles.button_wrapper} ${styles.small} ${styles.heart}`}>

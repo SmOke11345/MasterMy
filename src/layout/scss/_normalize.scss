@@ -15,7 +15,7 @@ html {
     //width: 100vw;
     background-color: $white;
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 ::-webkit-scrollbar {
@@ -67,4 +67,13 @@ input:focus {
 
 ul li {
     list-style: none;
+}
+
+button {
+    font-size: $font-p;
+    font-family: 'M PLUS Rounded 1c Medium', sans-serif;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

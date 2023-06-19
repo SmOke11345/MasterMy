@@ -1,8 +1,11 @@
 import React from 'react';
+
 import { Link, NavLink } from 'react-router-dom';
 
-import styles from './styles/styles.module.css';
+import TotalCountItems from '../../utils/TotalCountItems.ts';
 import Search from '../Search';
+
+import styles from './styles/styles.module.css';
 
 const menu = [
     { name: 'Главная', link: '/' },
@@ -12,7 +15,7 @@ const menu = [
 ];
 
 const Header: React.FC = () => {
-    // const [openLeng, setOpenLeng] = React.useState(false);
+    const totalCountItem = TotalCountItems();
 
     return (
         <header className={styles.header}>
@@ -79,8 +82,13 @@ const Header: React.FC = () => {
                                         fill="white"
                                     />
                                 </svg>
-
                                 <h5>Корзина</h5>
+                                <div
+                                    className={
+                                        totalCountItem > 0 ? styles.active : styles.display_none
+                                    }>
+                                    <p>{totalCountItem}</p>
+                                </div>
                             </div>
                         </Link>
                     </div>

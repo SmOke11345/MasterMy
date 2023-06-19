@@ -5,21 +5,21 @@ import { arrCategories } from './category.tsx';
 import styles from './styles/styles.module.css';
 
 type CategoriesProps = {
-    value: number;
-    handleCategory: (index: number) => void;
+    category: string;
+    handleCategory: (name: string) => void;
 };
 
-const Categories: React.FC<CategoriesProps> = ({ value, handleCategory }) => {
+const Categories: React.FC<CategoriesProps> = ({ category, handleCategory }) => {
     return (
         <div className={styles.categories}>
-            {arrCategories.map((obj, index) => {
+            {arrCategories.map((obj) => {
                 return (
                     <div
-                        key={index}
+                        key={obj.name}
                         className={`${styles.categories__item} ${
-                            index === value ? styles.active : ''
+                            category === obj.name ? styles.active : ''
                         }`}
-                        onClick={() => handleCategory(index)}>
+                        onClick={() => handleCategory(obj.name)}>
                         <h4>{obj.name}</h4>
                     </div>
                 );

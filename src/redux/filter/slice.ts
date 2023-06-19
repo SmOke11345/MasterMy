@@ -2,20 +2,19 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { FilterState, SortProp, SortType } from './types.ts';
 
 const initialState: FilterState = {
-    category: 0,
+    category: 'все',
     currentPage: 1,
-    // задаем значение по умолчанию
+    search: '',
     sort: {
         name: 'По умолчанию',
         value: SortType.DEFAULT,
     },
-    search: '',
 };
 export const filterSlice = createSlice({
     name: 'filter',
     initialState,
     reducers: {
-        setCategory: (state, action: PayloadAction<number>) => {
+        setCategory: (state, action: PayloadAction<string>) => {
             state.category = action.payload;
         },
         setCurrentPage: (state, action: PayloadAction<number>) => {
@@ -30,5 +29,5 @@ export const filterSlice = createSlice({
     },
 });
 
-export const { setCategory, setCurrentPage, setSort } = filterSlice.actions;
+export const { setCategory, setCurrentPage, setSort, setSearch } = filterSlice.actions;
 export default filterSlice.reducer;

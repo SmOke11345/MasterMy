@@ -7,32 +7,32 @@ import all from '../../pages/Main/img/all.svg';
 
 export const arrCategories: Record<string, string>[] = [
     {
-        name: 'Одежда',
+        name: 'одежда',
         img: cloth,
         link: '/catalog',
     },
     {
-        name: 'Электроника',
+        name: 'электроника',
         img: electronics,
         link: '/catalog',
     },
     {
-        name: 'Бытовая техника',
+        name: 'бытовая техника',
         img: appliances,
         link: '/catalog',
     },
     {
-        name: 'Автозапчасти',
+        name: 'автозапчасти',
         img: autoParts,
         link: '/catalog',
     },
     {
-        name: 'Книги',
+        name: 'книги',
         img: books,
         link: '/catalog',
     },
     {
-        name: 'Все',
+        name: 'все',
         img: all,
         link: '/catalog',
     },

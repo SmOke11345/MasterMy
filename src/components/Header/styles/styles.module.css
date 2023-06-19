@@ -1,4 +1,4 @@
-.header_bottom .nav, .header_bottom, .header_top .content_wrapper, .header_top {
+.header_bottom .nav, .header_bottom, .active, .header_top .content_wrapper, .header_top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,6 +32,7 @@ section:not(:first-child) .title {
   background-color: #ffe054;
   border-radius: 5px;
   transition: all 0.4s ease-in-out;
+  cursor: pointer;
 }
 .btn:hover {
   filter: drop-shadow(0px 0px 10px rgba(255, 224, 84, 0.9));
@@ -61,12 +62,18 @@ section:not(:first-child) .title {
   width: 50px;
 }
 
-.header_bottom .nav, .header_bottom, .header_top .content_wrapper, .header_top {
+.header_bottom .nav, .header_bottom, .active, .header_top .content_wrapper, .header_top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+@font-face {
+  font-family: "Days One", sans-serif;
+  src: url("./DaysOne-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
 .header {
   padding: 20px 0;
   box-shadow: 0 21px 30px rgba(0, 0, 0, 0.03);
@@ -86,12 +93,10 @@ section:not(:first-child) .title {
   right: 50px;
 }
 .search_wrapper .search_inner input[name=search] {
-  padding: 13px 0 13px 20px;
+  padding: 12px 0 12px 20px;
   width: 390px;
   border: 2px solid #d9d9d9;
   border-radius: 5px 0 0 5px;
-}
-.search_wrapper .search_inner input[name=search]::placeholder {
   font-family: "Days One", sans-serif;
 }
 .search_wrapper .search {
@@ -100,12 +105,28 @@ section:not(:first-child) .title {
 
 .button_wrapper.big {
   width: 145px;
+  position: relative;
 }
 
 .button_wrapper.big h5 {
   margin-left: 10px;
   color: #ffffff;
   font-size: calc(32px - 18px);
+}
+
+.active {
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 30px;
+  background-color: #ffe054;
+  border-radius: 50%;
+  top: -15px;
+  right: -15px;
+}
+.active p {
+  font-family: "Days One", sans-serif;
+  font-size: calc(16px - 2px);
 }
 
 .header_bottom {

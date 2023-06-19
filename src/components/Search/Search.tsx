@@ -1,16 +1,43 @@
 import React from 'react';
 
+import { useAppDispatch } from '../../redux/hooks.ts';
+import { setSearch } from '../../redux/filter/slice.ts';
+
 import styles from '../Header/styles/styles.module.css';
 
 const Search: React.FC = () => {
     const [openSearch, setOpenSearch] = React.useState(false);
+    const [value, setValue] = React.useState('');
+
+    const dispatch = useAppDispatch();
+
+    // const navigate = useNavigate();
+    // Доделать страницу с поиском
+    const inputSubmit = () => {
+        setOpenSearch(!openSearch);
+        dispatch(setSearch(value));
+        setValue('');
+    };
+
+    console.log(value);
     return (
         <div className={styles.search_wrapper}>
             <div className={`${styles.search_inner} ${openSearch ? '' : styles.display_none}`}>
-                <input type="text" id="search_field" name="search" placeholder="Поиск..." />
+                <input
+                    value={value}
+                    onChange={(event) => {
+                        setValue(event.target.value);
+                    }}
+                    type="text"
+                    id="search_field"
+                    name="search"
+                    placeholder="Поиск..."
+                />
             </div>
             <div
-                onClick={() => setOpenSearch(!openSearch)}
+                onClick={() => {
+                    inputSubmit();
+                }}
                 className={`${styles.button_wrapper} ${styles.small} ${
                     openSearch ? styles.search : ''
                 }`}>

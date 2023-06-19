@@ -12,6 +12,9 @@ export interface CatchProp {
 }
 
 export type ArgsFetchProducts = {
+    category: string;
     currentPage: string;
     search: string;
+    sort: string;
+    growth: string;
 };

@@ -5,6 +5,7 @@ export interface Items {
     title: string;
     subtitle: string;
     price: number;
+    count: number;
 }
 
 export interface CartProp {

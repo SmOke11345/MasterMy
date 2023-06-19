@@ -1,13 +1,13 @@
 export interface FilterState {
-    category: number;
+    category: string;
     currentPage: number;
     sort: SortProp;
     search: string;
 }
 
 export const enum SortType {
-    PRICE = 'price-asc',
-    PRICE_DESC = 'price-desc',
+    PRICE = 'price',
+    PRICE_DESC = '-price',
     NAME = 'title',
     DEFAULT = '',
 }

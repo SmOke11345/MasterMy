@@ -15,14 +15,12 @@ import NotFound from '../../components/NotFound';
 import styles from './styles/styles.module.css';
 
 const Catalog: React.FC = () => {
-    // const[(isLoading, setIsLoading)] = React.useState(true);
-
-    const { category, currentPage, sort } = useAppSelector((state) => state.filter);
+    const { category, currentPage, sort, search } = useAppSelector((state) => state.filter);
     const { status, items } = useAppSelector((state) => state.fetchProducts);
     const dispatch = useAppDispatch();
 
-    const handleCategory = (index: number): void => {
-        dispatch(setCategory(index));
+    const handleCategory = (name: string): void => {
+        dispatch(setCategory(name));
     };
 
     const handleSortValue = (name: SortProp): void => {
@@ -35,8 +33,22 @@ const Catalog: React.FC = () => {
 
     // Параметры фильтрации
     React.useEffect(() => {
-        dispatch(fetchProducts(currentPage.toString()));
-    }, []);
+        const searchValue = search ? `&search=${search}` : '';
+        const categoryValue = category === 'все' ? '&' : `&category_name=${category}`;
+
+        const sortValue = sort.value;
+        const sortReplace = sortValue.replace('-', '');
+        const growth = sortValue.includes('-') ? 'asc' : 'desc';
+        dispatch(
+            fetchProducts({
+                currentPage: currentPage.toString(),
+                search: searchValue,
+                category: categoryValue,
+                sort: sortReplace,
+                growth,
+            }),
+        );
+    }, [currentPage, category, search, sort]);
 
     const skeleton = [...new Array(6)].map((_, index) => {
         return <Skeleton key={index} />;
@@ -50,7 +62,7 @@ const Catalog: React.FC = () => {
         <section className={`${styles.Catalog} ${styles.shell}`}>
             <div className={styles.container}>
                 <div className={styles.wrapper_filters}>
-                    <Categories handleCategory={handleCategory} value={category} />
+                    <Categories handleCategory={handleCategory} category={category} />
                     <Sort handleSortValue={handleSortValue} sort={sort} />
                 </div>
                 <div className={styles.grid}>{status === 'loading' ? skeleton : products}</div>

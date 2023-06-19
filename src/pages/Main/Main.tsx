@@ -1,6 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
+import { useNavigate } from 'react-router-dom';
+import { setCategory } from '../../redux/filter/slice.ts';
+import { useAppDispatch } from '../../redux/hooks.ts';
 import { arrCategories } from '../../components/Categories/category.tsx';
 
 import sale from './img/sale.png';
@@ -10,8 +12,11 @@ import styles from './styles/styles.module.css';
 const Main: React.FC = () => {
     const navigate = useNavigate();
 
-    const navigateTo = (link: string): void => {
+    const dispatch = useAppDispatch();
+
+    const navigateTo = (link: string, name: string): void => {
         navigate(link);
+        dispatch(setCategory(name));
         window.scrollTo(0, 0);
     };
 
@@ -25,7 +30,9 @@ const Main: React.FC = () => {
                                 {arrCategories.map((obj, index) => (
                                     <div
                                         key={index}
-                                        onClick={() => navigate(`${obj.link}`)}
+                                        onClick={() => {
+                                            navigateTo(`${obj.link}`, obj.name);
+                                        }}
                                         className={styles.categories__item}>
                                         <div className={styles.categories__img}>
                                             <img src={obj.img} alt="" />
@@ -55,10 +62,10 @@ const Main: React.FC = () => {
                                                 </p>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div className={styles.btn}>
-                                                <a href="#">Все товары</a>
-                                            </div>
+                                        <div className={styles.btn}>
+                                            <a onClick={() => navigateTo('/catalog', 'все')}>
+                                                Все товары
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +85,7 @@ const Main: React.FC = () => {
                             <div className={styles.grid__item}></div>
                         </div>
                         <div className={styles.link}>
-                            <a onClick={() => navigateTo('/catalog')}>Посмотреть все</a>
+                            <a onClick={() => navigateTo('/catalog', 'одежда')}>Посмотреть все</a>
                         </div>
                     </div>
                     <div className={styles.title}>
@@ -92,7 +99,9 @@ const Main: React.FC = () => {
                             <div className={styles.grid__item}></div>
                         </div>
                         <div className={styles.link}>
-                            <a onClick={() => navigateTo('/catalog')}>Посмотреть все</a>
+                            <a onClick={() => navigateTo('/catalog', 'электроника')}>
+                                Посмотреть все
+                            </a>
                         </div>
                     </div>
                 </section>
