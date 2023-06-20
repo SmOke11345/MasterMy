@@ -14,6 +14,17 @@ const Main: React.FC = () => {
 
     const dispatch = useAppDispatch();
 
+    const arrImg = [
+        'https://ir.ozone.ru/s3/multimedia-t/wc1000/6636086237.jpg',
+        'https://static.insales-cdn.com/images/products/1/4197/478244965/1.jpg',
+        'https://ae04.alicdn.com/kf/S563f458e560a4f2b9610ee5a8708becbw.jpg_640x640.jpg',
+        'https://ir.ozone.ru/s3/multimedia-n/wc1000/6169410587.jpg',
+        'https://ir.ozone.ru/s3/multimedia-c/wc1000/6668957460.jpg',
+        'https://ir.ozone.ru/s3/multimedia-m/wc1000/6179130838.jpg',
+        'https://ir.ozone.ru/s3/multimedia-e/wc1000/6570933626.jpg',
+        'https://ir.ozone.ru/s3/multimedia-a/wc1000/6469831942.jpg',
+    ];
+
     const navigateTo = (link: string, name: string): void => {
         navigate(link);
         dispatch(setCategory(name));
@@ -79,10 +90,15 @@ const Main: React.FC = () => {
                     </div>
                     <div className={styles.grid_wrapper}>
                         <div className={styles.grid}>
-                            <div className={styles.grid__item}></div>
-                            <div className={styles.grid__item}></div>
-                            <div className={styles.grid__item}></div>
-                            <div className={styles.grid__item}></div>
+                            {arrImg.slice(0, 4).map((obj, index) => (
+                                <div
+                                    key={index}
+                                    className={styles.grid__item}
+                                    style={{
+                                        backgroundImage: `url(${obj})`,
+                                        backgroundSize: 'cover',
+                                    }}></div>
+                            ))}
                         </div>
                         <div className={styles.link}>
                             <a onClick={() => navigateTo('/catalog', 'одежда')}>Посмотреть все</a>
@@ -93,10 +109,15 @@ const Main: React.FC = () => {
                     </div>
                     <div className={styles.grid_wrapper}>
                         <div className={`${styles.grid} ${styles.grid_reverse}`}>
-                            <div className={styles.grid__item}></div>
-                            <div className={styles.grid__item}></div>
-                            <div className={styles.grid__item}></div>
-                            <div className={styles.grid__item}></div>
+                            {arrImg.slice(4, 8).map((obj, index) => (
+                                <div
+                                    key={index}
+                                    className={styles.grid__item}
+                                    style={{
+                                        backgroundImage: `url(${obj})`,
+                                        backgroundSize: 'cover',
+                                    }}></div>
+                            ))}
                         </div>
                         <div className={styles.link}>
                             <a onClick={() => navigateTo('/catalog', 'электроника')}>
