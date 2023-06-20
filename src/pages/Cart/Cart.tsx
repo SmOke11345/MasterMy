@@ -5,6 +5,7 @@ import { clearCart, decItem, incItem, removeItem } from '../../redux/cart/slice.
 
 import styles from './styles/styles.module.css';
 import TotalCountAll from '../../utils/TotalCountItems.ts';
+import NotFound from '../../components/NotFound';
 
 const Cart: React.FC = () => {
     const { items } = useAppSelector((state) => state.cart);
@@ -14,14 +15,16 @@ const Cart: React.FC = () => {
 
     const totalPriceAll = items.reduce((sum, item) => sum + item.price * item.count, 0);
 
+    React.useEffect(() => {
+        // полученный массив преобразуем в строку
+        const json = JSON.stringify(items);
+        // И сохраняем в хранилище
+        localStorage.setItem('cart', json);
+    }, [items]);
+
+    // Сделать отдельным компонентом и передавать в него title и text
     if (items.length === 0) {
-        return (
-            <div className={styles.shell}>
-                <h2 style={{ margin: ' 0 auto', width: '100%', textAlign: 'center' }}>
-                    Ничего не найдено, добавьте товар в корзину :)
-                </h2>
-            </div>
-        );
+        return <NotFound />;
     }
 
     return (

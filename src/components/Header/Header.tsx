@@ -6,6 +6,7 @@ import TotalCountItems from '../../utils/TotalCountItems.ts';
 import Search from '../Search';
 
 import styles from './styles/styles.module.css';
+import { useAppSelector } from '../../redux/hooks.ts';
 
 const menu = [
     { name: 'Главная', link: '/' },
@@ -15,6 +16,8 @@ const menu = [
 ];
 
 const Header: React.FC = () => {
+    const items = useAppSelector((state) => state.favorite.items);
+
     const totalCountItem = TotalCountItems();
 
     return (
@@ -42,19 +45,30 @@ const Header: React.FC = () => {
                     </div>
                     <div className={styles.content_wrapper}>
                         <Search />
-                        <div className={`${styles.button_wrapper} ${styles.small} ${styles.heart}`}>
-                            <svg
-                                width="25"
-                                height="23"
-                                viewBox="0 0 25 23"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.5 22.9375L10.6875 21.2875C4.25 15.45 0 11.5875 0 6.875C0 3.0125 3.025 0 6.875 0C9.05 0 11.1375 1.0125 12.5 2.6C13.8625 1.0125 15.95 0 18.125 0C21.975 0 25 3.0125 25 6.875C25 11.5875 20.75 15.45 14.3125 21.2875L12.5 22.9375Z"
-                                    fill="white"
-                                />
-                            </svg>
-                        </div>
+                        <Link to="/favorite">
+                            <div
+                                className={`${styles.button_wrapper} ${styles.small} ${
+                                    items.length > 0 ? styles['heart--active'] : styles.heart
+                                }`}>
+                                <svg
+                                    width="25"
+                                    height="23"
+                                    viewBox="0 0 25 23"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.5 22.9375L10.6875 21.2875C4.25 15.45 0 11.5875 0 6.875C0 3.0125 3.025 0 6.875 0C9.05 0 11.1375 1.0125 12.5 2.6C13.8625 1.0125 15.95 0 18.125 0C21.975 0 25 3.0125 25 6.875C25 11.5875 20.75 15.45 14.3125 21.2875L12.5 22.9375Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                                <div
+                                    className={
+                                        items.length > 0 ? styles.active : styles.display_none
+                                    }>
+                                    <p>{items.length}</p>
+                                </div>
+                            </div>
+                        </Link>
                         <div className={`${styles.button_wrapper} ${styles.big}`}>
                             <svg
                                 width="25"

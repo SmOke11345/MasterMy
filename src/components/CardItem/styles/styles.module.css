@@ -1,4 +1,4 @@
-.card__bottom .wrapper, .card__inner .wrapper {
+.card__inner .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,7 +62,14 @@ section:not(:first-child) .title {
   width: 50px;
 }
 
-.card__bottom .wrapper, .card__inner .wrapper {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 45px;
+  row-gap: 90px;
+}
+
+.card__inner .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,8 +90,8 @@ section:not(:first-child) .title {
   padding: 20px;
 }
 .card__inner .wrapper {
-  align-items: baseline;
   flex-wrap: wrap;
+  row-gap: 20px;
 }
 .card__title h2 {
   font-size: calc(32px - 12px);
@@ -93,7 +100,6 @@ section:not(:first-child) .title {
 .card__price h2 {
   font-size: calc(32px - 10px);
   width: 100%;
-  margin-top: 20px;
 }
 .card__bottom {
   width: 350px;
@@ -109,7 +115,7 @@ section:not(:first-child) .title {
 .card__bottom .wrapper {
   padding: 0 20px 30px;
 }
-.card:hover {
+.card:hover, .card--active {
   border: 1px solid #ffe054;
   border-bottom: none;
   border-radius: 5px 5px 0 0;
@@ -120,6 +126,10 @@ section:not(:first-child) .title {
 }
 
 .heart:hover svg path {
+  fill: #ff0000;
+}
+
+.heart_active svg path {
   fill: #ff0000;
 }
 

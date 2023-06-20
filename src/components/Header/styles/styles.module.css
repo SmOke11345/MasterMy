@@ -62,6 +62,13 @@ section:not(:first-child) .title {
   width: 50px;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 45px;
+  row-gap: 90px;
+}
+
 .header_bottom .nav, .header_bottom, .active, .header_top .content_wrapper, .header_top {
   display: flex;
   justify-content: space-between;
@@ -93,7 +100,7 @@ section:not(:first-child) .title {
   right: 50px;
 }
 .search_wrapper .search_inner input[name=search] {
-  padding: 12px 0 12px 20px;
+  padding: 13px 0 13px 20px;
   width: 390px;
   border: 2px solid #d9d9d9;
   border-radius: 5px 0 0 5px;
@@ -127,6 +134,16 @@ section:not(:first-child) .title {
 .active p {
   font-family: "Days One", sans-serif;
   font-size: calc(16px - 2px);
+}
+
+.heart:hover svg path {
+  fill: #ff0000;
+}
+.heart--active {
+  position: relative;
+}
+.heart--active svg path {
+  fill: #ff0000;
 }
 
 .header_bottom {

@@ -7,9 +7,9 @@ import { ArgsFetchProducts } from './types.ts';
 export const fetchProducts = createAsyncThunk<Items[], ArgsFetchProducts>(
     'products/fetchProducts',
     async (props) => {
-        const { currentPage, search, category, sort, growth } = props;
+        const { currentPage, search, category, sort } = props;
         const { data } = await axios.get(
-            `https://648eeb6175a96b6644447928.mockapi.io/products?page=${currentPage}&limit=8${category}&sortBy=${sort}&order=${growth}${search}`,
+            `https://648eeb6175a96b6644447928.mockapi.io/products?${currentPage}${category}${sort}${search}`,
         );
         return data;
     },

@@ -18,8 +18,8 @@
 
         .wrapper {
             @extend %wrapper;
-            align-items: baseline;
             flex-wrap: wrap;
+            row-gap: 20px;
         }
     }
 
@@ -31,7 +31,6 @@
     &__price h2 {
         font-size: calc(#{$font-h} - 10px);
         width: 100%;
-        margin-top: 20px;
     }
 
     &__bottom {
@@ -47,16 +46,16 @@
         border-radius: 0 0 5px 5px;
 
         .wrapper {
-            @extend %wrapper;
             padding: 0 20px 30px;
         }
     }
 
-    &:hover {
+    &:hover, &--active {
         border: 1px solid $auxiliary-yellow;
         border-bottom: none;
         border-radius: 5px 5px 0 0;
     }
+
 }
 
 .button_wrapper {
@@ -64,6 +63,10 @@
 }
 
 .heart:hover svg path {
+    fill: #ff0000;
+}
+
+.heart_active svg path {
     fill: #ff0000;
 }
 

@@ -6,6 +6,7 @@ export interface Items {
     subtitle: string;
     price: number;
     count: number;
+    favorite: boolean;
 }
 
 export interface CartProp {

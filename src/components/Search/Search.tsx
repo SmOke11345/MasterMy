@@ -1,25 +1,29 @@
 import React from 'react';
 
 import { useAppDispatch } from '../../redux/hooks.ts';
-import { setSearch } from '../../redux/filter/slice.ts';
+import { setCategory, setSearch } from '../../redux/filter/slice.ts';
 
 import styles from '../Header/styles/styles.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const Search: React.FC = () => {
     const [openSearch, setOpenSearch] = React.useState(false);
     const [value, setValue] = React.useState('');
 
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
-    // const navigate = useNavigate();
     // Доделать страницу с поиском
     const inputSubmit = () => {
-        setOpenSearch(!openSearch);
-        dispatch(setSearch(value));
-        setValue('');
+        if (!value) {
+            setOpenSearch(!openSearch);
+        } else {
+            navigate('/catalog');
+            dispatch(setSearch(value));
+            dispatch(setCategory('все'));
+        }
     };
 
-    console.log(value);
     return (
         <div className={styles.search_wrapper}>
             <div className={`${styles.search_inner} ${openSearch ? '' : styles.display_none}`}>
@@ -37,6 +41,7 @@ const Search: React.FC = () => {
             <div
                 onClick={() => {
                     inputSubmit();
+                    setValue('');
                 }}
                 className={`${styles.button_wrapper} ${styles.small} ${
                     openSearch ? styles.search : ''

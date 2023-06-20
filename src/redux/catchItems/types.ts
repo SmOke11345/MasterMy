@@ -16,5 +16,4 @@ export type ArgsFetchProducts = {
     currentPage: string;
     search: string;
     sort: string;
-    growth: string;
 };

@@ -4,30 +4,48 @@ import { useHover } from 'usehooks-ts';
 import { useAppDispatch } from '../../redux/hooks.ts';
 import { addToCart } from '../../redux/cart/slice.ts';
 import { Items } from '../../redux/cart/types.ts';
+import { addToFavor, removeFavorItem } from '../../redux/favorite/slice.ts';
 
 import styles from './styles/styles.module.css';
 
-const CardItem: React.FC<Items> = ({ id, category_name, subtitle, title, price, img }) => {
+const CardItem: React.FC<Items> = ({
+    id,
+    category_name,
+    subtitle,
+    title,
+    price,
+    img,
+    favorite,
+}) => {
     const ref = React.useRef<HTMLDivElement>(null);
     const isHover = useHover(ref);
 
     const dispatch = useAppDispatch();
 
+    const objItem: Items = {
+        id,
+        category_name,
+        img,
+        title,
+        subtitle,
+        price,
+        count: 1,
+        favorite,
+    };
     const addToCartItem = () => {
-        const objItem: Items = {
-            id,
-            category_name,
-            img,
-            title,
-            subtitle,
-            price,
-            count: 1,
-        };
         dispatch(addToCart(objItem));
     };
 
+    const addToFavoriteItem = () => {
+        dispatch(addToFavor({ ...objItem, favorite: true }));
+    };
+
+    const removeFavoriteItem = () => {
+        dispatch(removeFavorItem({ ...objItem, favorite: !favorite }));
+    };
+
     return (
-        <div ref={ref} className={styles.card}>
+        <div ref={ref} className={`${styles.card} ${favorite && styles['card--active']}  `}>
             <div className={styles.card__top}>
                 <div
                     className={styles.card__img}
@@ -44,13 +62,21 @@ const CardItem: React.FC<Items> = ({ id, category_name, subtitle, title, price, 
                             <h2>{price}₽</h2>
                         </div>
                     </div>
-                    <div className={`${styles.card__bottom} ${isHover ? '' : styles.display_none}`}>
+                    <div
+                        className={`${styles.card__bottom} ${
+                            favorite || isHover ? '' : styles.display_none
+                        }`}>
                         <div className={styles.wrapper}>
                             <div className={styles.btn}>
                                 <a onClick={addToCartItem}>В корзину</a>
                             </div>
                             <div
-                                className={`${styles.button_wrapper} ${styles.small} ${styles.heart}`}>
+                                onClick={() => {
+                                    favorite ? removeFavoriteItem() : addToFavoriteItem();
+                                }}
+                                className={`${styles.button_wrapper} ${styles.small} ${
+                                    favorite ? styles.heart_active : styles.heart
+                                }`}>
                                 <svg
                                     width="25"
                                     height="23"

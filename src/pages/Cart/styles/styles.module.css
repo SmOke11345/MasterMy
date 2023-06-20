@@ -62,6 +62,13 @@ section:not(:first-child) .title {
   width: 50px;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 45px;
+  row-gap: 90px;
+}
+
 .wrapper_bottom .content_wrapper, .product__item .center, .product__item .count, .product__item .wrapper_buttons, .product__item, .wrapper_top {
   display: flex;
   justify-content: space-between;

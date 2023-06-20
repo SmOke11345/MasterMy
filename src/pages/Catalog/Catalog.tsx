@@ -10,7 +10,7 @@ import Categories from '../../components/Categories';
 import Pagination from '../../components/Pagination';
 import Skeleton from '../../components/CardItem/Skeleton.tsx';
 import CardItem from '../../components/CardItem';
-import NotFound from '../../components/NotFound';
+import NotFound from '../Error';
 
 import styles from './styles/styles.module.css';
 
@@ -33,19 +33,23 @@ const Catalog: React.FC = () => {
 
     // Параметры фильтрации
     React.useEffect(() => {
+        const currentPageValue = `page=${currentPage.toString()}&limit=8`;
+
         const searchValue = search ? `&search=${search}` : '';
+
         const categoryValue = category === 'все' ? '&' : `&category_name=${category}`;
 
         const sortValue = sort.value;
         const sortReplace = sortValue.replace('-', '');
         const growth = sortValue.includes('-') ? 'asc' : 'desc';
+        const requestSort = sortValue ? `&sortBy=${sortReplace}&order=${growth}` : '';
+
         dispatch(
             fetchProducts({
-                currentPage: currentPage.toString(),
+                currentPage: currentPageValue,
                 search: searchValue,
                 category: categoryValue,
-                sort: sortReplace,
-                growth,
+                sort: requestSort,
             }),
         );
     }, [currentPage, category, search, sort]);
@@ -54,9 +58,16 @@ const Catalog: React.FC = () => {
         return <Skeleton key={index} />;
     });
 
-    const products = items.map((item) => {
-        return <CardItem key={item.id} {...item} />;
-    });
+    const products = items
+        // Если поиск не пустой и содержит значения в обоих регистрах, то рендерим элементы
+        .filter((obj) => {
+            if (obj.title.toLowerCase().includes(search.toLowerCase())) {
+                return true;
+            }
+        })
+        .map((obj) => {
+            return <CardItem key={obj.id} {...obj} />;
+        });
 
     return (
         <section className={`${styles.Catalog} ${styles.shell}`}>

@@ -16,6 +16,9 @@ export const filterSlice = createSlice({
     reducers: {
         setCategory: (state, action: PayloadAction<string>) => {
             state.category = action.payload;
+            if (state.category !== 'все') {
+                state.search = '';
+            }
         },
         setCurrentPage: (state, action: PayloadAction<number>) => {
             state.currentPage = action.payload;

@@ -1,9 +1,3 @@
-.Catalog .wrapper_filters {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .container {
   width: 1140px;
   max-width: 100%;
@@ -67,17 +61,6 @@ section:not(:first-child) .title {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 45px;
   row-gap: 90px;
-}
-
-.Catalog .wrapper_filters {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.Catalog .wrapper_filters {
-  align-items: flex-start;
-  margin-bottom: 50px;
 }
 
 /*# sourceMappingURL=styles.module.css.map */
