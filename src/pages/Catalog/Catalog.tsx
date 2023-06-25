@@ -1,9 +1,11 @@
 import React from 'react';
+import qs from 'qs';
 
 import { useAppDispatch, useAppSelector } from '../../redux/hooks.ts';
 import { setCategory, setCurrentPage, setSort } from '../../redux/filter/slice.ts';
 import { SortProp } from '../../redux/filter/types.ts';
 import { fetchProducts } from '../../redux/catchItems/asyncThunk.ts';
+import { useNavigate } from 'react-router-dom';
 
 import Sort from '../../components/Sort';
 import Categories from '../../components/Categories';
@@ -18,6 +20,9 @@ const Catalog: React.FC = () => {
     const { category, currentPage, sort, search } = useAppSelector((state) => state.filter);
     const { status, items } = useAppSelector((state) => state.fetchProducts);
     const dispatch = useAppDispatch();
+
+    const [isMounted, setIsMounted] = React.useState(false);
+    const navigate = useNavigate();
 
     const handleCategory = (name: string): void => {
         dispatch(setCategory(name));
@@ -52,7 +57,23 @@ const Catalog: React.FC = () => {
                 sort: requestSort,
             }),
         );
+
+        // Говорим что можно добавлять запрос в строку
+        setIsMounted(true);
     }, [currentPage, category, search, sort]);
+
+    // Вшиваем в строку поиска фильтрацию
+    React.useEffect(() => {
+        if (isMounted) {
+            // Преобразуем данные в строку
+            const queryString = qs.stringify({
+                search,
+                category,
+                sort: sort.value,
+            });
+            navigate(`?${queryString}`);
+        }
+    }, [sort, category, search]);
 
     const skeleton = [...new Array(6)].map((_, index) => {
         return <Skeleton key={index} />;
