@@ -1,6 +1,7 @@
 .container {
-  width: 1140px;
+  width: 1160px;
   max-width: 100%;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
@@ -63,6 +64,19 @@ section:not(:first-child) .title {
   row-gap: 90px;
 }
 
+@media screen and (max-width: 1160px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    column-gap: 30px;
+    row-gap: 70px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
 .contacts {
   color: #ffffff;
 }
@@ -75,48 +89,75 @@ section:not(:first-child) .title {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
 }
-.contacts .grid {
+.contacts .grid_contacts {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 35px;
 }
-.contacts .grid__item.grid_first {
+.contacts .grid_contacts__item.grid_first {
   background: linear-gradient(102.74deg, #bcbaba 52.56%, #5fb4bf 52.56%, #00aec5 97.08%);
 }
-.contacts .grid__item {
+.contacts .grid_contacts__item {
   background-color: #00aec5;
   border-radius: 5px;
 }
-.contacts .grid__item h4 {
+.contacts .grid_contacts__item h4 {
   font-size: calc(32px / 2 - 2px);
 }
-.contacts .grid__inner {
+.contacts .grid_contacts__inner {
   padding: 30px;
   display: flex;
   justify-content: space-between;
   height: 278px;
 }
-.contacts .grid__inner.link_bottom {
+.contacts .grid_contacts__inner.link_bottom {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.contacts .grid__title h3 {
+.contacts .grid_contacts__title h3 {
   font-size: calc(32px - 8px);
 }
-.contacts .grid__subtitle {
+.contacts .grid_contacts__subtitle {
   margin-top: 20px;
 }
-.contacts .grid__btn {
+.contacts .grid_contacts__btn {
   margin-top: 55px;
   width: 174px;
   border: 1px solid #ffffff;
   border-radius: 5px;
   text-align: center;
 }
-.contacts .grid__btn a {
+.contacts .grid_contacts__btn a {
   padding: 15px;
   display: block;
+}
+@media screen and (max-width: 1160px) {
+  .contacts .grid_contacts,
+.contacts .wrapper .grid_bottom {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .contacts .grid_contacts .grid_contacts__item:last-child {
+    grid-row: 2/2;
+    grid-column: 1/3;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contacts .grid_contacts,
+.contacts .wrapper .grid_bottom {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .contacts .grid_contacts .grid_contacts__item:last-child {
+    grid-row: 3/3;
+    grid-column: 1/1;
+  }
+}
+@media screen and (max-width: 340px) {
+  .contacts .headphone {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=styles.module.css.map */

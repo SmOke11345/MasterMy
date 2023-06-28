@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { FavoriteProp } from './types.ts';
 import { Items } from '../cart/types.ts';
-import { GetLSCart } from '../../utils/GetLSFavor.ts';
+import { GetLocalStorage } from '../../utils/GetLocalStorage.ts';
 
-const { items } = GetLSCart();
+const { itemsFav } = GetLocalStorage();
 
 const initialState: FavoriteProp = {
-    items,
+    items: itemsFav,
 };
 
 export const favoriteSlice = createSlice({

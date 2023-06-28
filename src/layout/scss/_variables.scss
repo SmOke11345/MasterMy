@@ -11,6 +11,10 @@ $border-radius: 5px;
 $font-p: 16px;
 $font-h: 32px;
 
+$large: 1160px;
+$medium: 768px;
+$small: 340px;
+
 %wrapper {
     display: flex;
     justify-content: space-between;

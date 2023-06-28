@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CartProp, Items } from './types.ts';
-import { GetLSCart } from '../../utils/GetLSCart.ts';
+import { GetLocalStorage } from '../../utils/GetLocalStorage.ts';
 
-const { items } = GetLSCart();
+const { itemsCart } = GetLocalStorage();
 
 const initialState: CartProp = {
-    items,
+    items: itemsCart,
     totalPrice: 0,
 };
 export const cartSlice = createSlice({

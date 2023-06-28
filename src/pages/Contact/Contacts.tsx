@@ -10,21 +10,21 @@ const Contacts: React.FC = () => {
                     <h2>Контакты</h2>
                 </div>
                 <div className={styles.wrapper}>
-                    <div className={`${styles.grid_top} ${styles.grid}`}>
-                        <div className={`${styles.grid__item} ${styles.grid_first}`}>
-                            <div className={styles.grid__inner}>
+                    <div className={`${styles.grid_contacts} ${styles.grid_top}`}>
+                        <div className={`${styles.grid_contacts__item} ${styles.grid_first}`}>
+                            <div className={styles.grid_contacts__inner}>
                                 <div>
-                                    <div className={styles.grid__title}>
+                                    <div className={styles.grid_contacts__title}>
                                         <h3>Обращения</h3>
                                     </div>
-                                    <div className={styles.grid__subtitle}>
+                                    <div className={styles.grid_contacts__subtitle}>
                                         <p>Если у Вас возник вопрос - напишите нам</p>
                                     </div>
-                                    <div className={styles.grid__btn}>
+                                    <div className={styles.grid_contacts__btn}>
                                         <a href="#">Частые вопросы</a>
                                     </div>
                                 </div>
-                                <div>
+                                <div className={styles.headphone}>
                                     <svg
                                         width="224"
                                         height="225"
@@ -60,14 +60,15 @@ const Contacts: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.grid__item}>
-                            <div className={styles.grid__item}>
-                                <div className={`${styles.grid__inner} ${styles.link_bottom}`}>
+                        <div className={styles.grid_contacts__item}>
+                            <div className={styles.grid_contacts__item}>
+                                <div
+                                    className={`${styles.grid_contacts__inner} ${styles.link_bottom}`}>
                                     <div>
-                                        <div className={styles.grid__title}>
+                                        <div className={styles.grid_contacts__title}>
                                             <h3>Официальные запросы</h3>
                                         </div>
-                                        <div className={styles.grid__subtitle}>
+                                        <div className={styles.grid_contacts__subtitle}>
                                             <p>Для отправки или получения деловой документации</p>
                                         </div>
                                     </div>
@@ -77,14 +78,14 @@ const Contacts: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.grid__item}>
-                            <div className={styles.grid__item}>
-                                <div className={styles.grid__inner}>
+                        <div className={styles.grid_contacts__item}>
+                            <div className={styles.grid_contacts__item}>
+                                <div className={styles.grid_contacts__inner}>
                                     <div>
-                                        <div className={styles.grid__title}>
+                                        <div className={styles.grid_contacts__title}>
                                             <h3>Правообладателям</h3>
                                         </div>
-                                        <div className={styles.grid__subtitle}>
+                                        <div className={styles.grid_contacts__subtitle}>
                                             <p>
                                                 Претензии по нарушению прав на ителлектуальную
                                                 собственность
@@ -95,32 +96,31 @@ const Contacts: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.grid_bottom} ${styles.grid} ${styles.grid_bottom}`}>
-                        <div className={styles.grid__item}>
-                            <div className={styles.grid__item}>
-                                <div className={`${styles.grid__inner} ${styles.link_bottom}`}>
-                                    <div>
-                                        <div className={styles.grid__title}>
-                                            <h3>Партнерам</h3>
-                                        </div>
-                                        <div className={styles.grid__subtitle}>
-                                            <p>Узнайте подробные условия для сотрудничества</p>
-                                        </div>
+                    <div className={`${styles.grid_contacts} ${styles.grid_bottom}`}>
+                        <div className={styles.grid_contacts__item}>
+                            <div className={`${styles.grid_contacts__inner} ${styles.link_bottom}`}>
+                                <div>
+                                    <div className={styles.grid_contacts__title}>
+                                        <h3>Партнерам</h3>
                                     </div>
-                                    <div>
-                                        <h4>Подробнее</h4>
+                                    <div className={styles.grid_contacts__subtitle}>
+                                        <p>Узнайте подробные условия для сотрудничества</p>
                                     </div>
+                                </div>
+                                <div>
+                                    <h4>Подробнее</h4>
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.grid__item}>
-                            <div className={styles.grid__item}>
-                                <div className={`${styles.grid__inner} ${styles.link_bottom}`}>
+                        <div className={styles.grid_contacts__item}>
+                            <div className={styles.grid_contacts__item}>
+                                <div
+                                    className={`${styles.grid_contacts__inner} ${styles.link_bottom}`}>
                                     <div>
-                                        <div className={styles.grid__title}>
+                                        <div className={styles.grid_contacts__title}>
                                             <h3>Пресс-служба</h3>
                                         </div>
-                                        <div className={styles.grid__subtitle}>
+                                        <div className={styles.grid_contacts__subtitle}>
                                             <p>Для запросов СМИ и на участие в мероприятиях</p>
                                         </div>
                                     </div>
@@ -130,13 +130,13 @@ const Contacts: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.grid__item}>
-                            <div className={styles.grid__inner}>
+                        <div className={styles.grid_contacts__item}>
+                            <div className={styles.grid_contacts__inner}>
                                 <div>
-                                    <div className={styles.grid__title}>
+                                    <div className={styles.grid_contacts__title}>
                                         <h3>Юридический адрес</h3>
                                     </div>
-                                    <div className={styles.grid__subtitle}>
+                                    <div className={styles.grid_contacts__subtitle}>
                                         <p>
                                             142451, Московская область, г. Электросталь, п.
                                             Случайный, здание бригадирского дома

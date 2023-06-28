@@ -117,7 +117,7 @@ const AboutUs: React.FC = () => {
                                 </h3>
                             </div>
                         </div>
-                        <div>
+                        <div className={styles.hero__img}>
                             <svg
                                 width="211"
                                 height="211"
