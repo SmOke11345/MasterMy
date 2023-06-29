@@ -5,7 +5,7 @@
 }
 
 .container {
-  width: 1160px;
+  width: 1200px;
   max-width: 100%;
   padding: 0 20px;
   margin: 0 auto;
@@ -26,6 +26,11 @@ section:not(:first-child) .title {
   margin: 100px 0;
 }
 
+@media screen and (max-width: 768px) {
+  .shell {
+    margin: 50px 0;
+  }
+}
 .btn {
   width: 185px;
   height: 45px;
