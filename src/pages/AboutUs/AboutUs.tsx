@@ -132,9 +132,9 @@ const AboutUs: React.FC = () => {
                         </div>
                     </div>
                     <div className={styles.subject}>
-                        {arrSubject.map((obj, index) => {
+                        {arrSubject.map((obj) => {
                             return (
-                                <div key={index} className={styles.subject__item}>
+                                <div className={styles.subject__item}>
                                     <div className={styles.subject__img}>
                                         <img src={obj.img} alt="" />
                                     </div>

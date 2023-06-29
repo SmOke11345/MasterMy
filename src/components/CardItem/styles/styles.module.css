@@ -5,7 +5,7 @@
 }
 
 .container {
-  width: 1200px;
+  width: 1160px;
   max-width: 100%;
   padding: 0 20px;
   margin: 0 auto;
@@ -26,11 +26,6 @@ section:not(:first-child) .title {
   margin: 100px 0;
 }
 
-@media screen and (max-width: 768px) {
-  .shell {
-    margin: 50px 0;
-  }
-}
 .btn {
   width: 185px;
   height: 45px;
@@ -134,26 +129,12 @@ section:not(:first-child) .title {
 .card__bottom .wrapper {
   padding: 0 20px 30px;
 }
-@media screen and (max-width: 340px) {
-  .card__bottom {
-    width: 280px;
-    bottom: -60px;
-  }
-  .card__bottom .wrapper {
-    padding: 0 10px 15px;
-  }
-}
 .card:hover, .card--active {
   border: 1px solid #ffe054;
   border-bottom: none;
   border-radius: 5px 5px 0 0;
 }
 
-@media screen and (max-width: 340px) {
-  .card {
-    width: 100%;
-  }
-}
 .button_wrapper {
   background-color: #ffe054;
 }

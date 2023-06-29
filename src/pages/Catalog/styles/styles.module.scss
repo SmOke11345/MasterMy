@@ -2,17 +2,11 @@
 @import '../../../layout/scss/variables';
 
 .Catalog {
+
     .wrapper_filters {
         @extend %wrapper;
 
         align-items: flex-start;
         margin-bottom: 50px;
-    }
-
-    @media screen and (max-width: $medium) {
-        .wrapper_filters {
-            flex-direction: column;
-            row-gap: 30px;
-        }
     }
 }
