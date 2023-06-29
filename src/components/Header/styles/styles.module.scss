@@ -39,10 +39,6 @@
     }
 }
 
-//.content_wrapper .heart:hover svg path {
-//    fill: #ff0000;
-//}
-
 .button_wrapper.big {
     width: 145px;
     position: relative;
@@ -100,6 +96,13 @@
         }
     }
 
+    @media screen and (max-width: $small) {
+        a {
+            font-size: 12px;
+        }
+    }
+
+    // Для работы со стилями сторонних плагинов
     :global {
         a.active,
         a:hover {
@@ -115,3 +118,23 @@
         color: $title-text-color;
     }
 }
+
+@media screen and (max-width: 555px) {
+    .header_bottom .content_wrapper:last-child {
+        display: none;
+    }
+}
+
+@media screen and (max-width: $small) {
+    .header_bottom {
+        .content_wrapper:first-child {
+            width: 100%;
+
+            .nav {
+                width: auto;
+            }
+        }
+    }
+}
+
+

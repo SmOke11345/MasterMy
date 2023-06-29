@@ -50,12 +50,29 @@
         }
     }
 
+    @media screen and (max-width: $small) {
+        &__bottom {
+            width: 280px;
+            bottom: -60px;
+
+            .wrapper {
+                padding: 0 10px 15px;
+            }
+        }
+    }
+
     &:hover, &--active {
         border: 1px solid $auxiliary-yellow;
         border-bottom: none;
         border-radius: 5px 5px 0 0;
     }
 
+}
+
+@media screen and (max-width: $small) {
+    .card {
+        width: 100%;
+    }
 }
 
 .button_wrapper {
